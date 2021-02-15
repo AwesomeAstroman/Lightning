@@ -15,8 +15,9 @@ namespace AZhelnov.Game
 
         public void Add(int amount)
         {
-            score.ModifyValue(amount);
-            score.SetValue(Mathf.Clamp(score.Value, 0, score.Value + 1));
+            int newScore = score.Value + amount;
+            newScore = Mathf.Clamp(newScore, 0, newScore + 1);
+            score.SetValue(newScore);
         }
     }
 }
