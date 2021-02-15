@@ -29,7 +29,7 @@ namespace AZhelnov.Variables
 
         private void UpdateText()
         {
-            textMeshPro.SetText(format, variable.value % 1000);
+            textMeshPro.SetText(format, variable.Value % 1000);
         }
     }
 }

@@ -5,11 +5,12 @@ namespace AZhelnov.Variables
     [CreateAssetMenu]
     public class FloatVariable : ScriptableObject
     {
+        [SerializeField] private float value;
 #if UNITY_EDITOR
         [Multiline]
         public string description;
 #endif
-        public float value;
+        public float Value { get { return value; } }
 
 
         public void SetValue(float value)
@@ -17,9 +18,9 @@ namespace AZhelnov.Variables
             this.value = value;
         }
 
-        public void SetValue(FloatVariable value)
+        public void SetValue(FloatVariable floatVariable)
         {
-            this.value = value.value;
+            this.value = floatVariable.Value;
         }
 
         public void ModifyValue(float amount)
@@ -27,9 +28,9 @@ namespace AZhelnov.Variables
             this.value += amount;
         }
 
-        public void ModifyValue(FloatVariable amount)
+        public void ModifyValue(FloatVariable floatVariable)
         {
-            this.value += amount.value;
+            this.value += floatVariable.Value;
         }
     }
 }

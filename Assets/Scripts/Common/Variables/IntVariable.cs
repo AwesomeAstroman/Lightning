@@ -5,11 +5,12 @@ namespace AZhelnov.Variables
     [CreateAssetMenu]
     public class IntVariable : ScriptableObject
     {
+        [SerializeField] private int value;
 #if UNITY_EDITOR
         [Multiline]
         public string description;
 #endif
-        public int value;
+        public int Value { get { return value; } }
 
 
         public void SetValue(int value)
@@ -17,9 +18,9 @@ namespace AZhelnov.Variables
             this.value = value;
         }
 
-        public void SetValue(IntVariable value)
+        public void SetValue(IntVariable intVariable)
         {
-            this.value = value.value;
+            this.value = intVariable.Value;
         }
 
         public void ModifyValue(int amount)
@@ -27,9 +28,9 @@ namespace AZhelnov.Variables
             this.value += amount;
         }
 
-        public void ModifyValue(IntVariable amount)
+        public void ModifyValue(IntVariable intVariable)
         {
-            this.value += amount.value;
+            this.value += intVariable.Value;
         }
     }
 }

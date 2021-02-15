@@ -22,9 +22,9 @@ namespace AZhelnov.Game
         {
             if (update)
             {
-                remainingTime.SetValue(Mathf.Clamp(remainingTime.value - Time.deltaTime, 0, seconds));
+                remainingTime.SetValue(Mathf.Clamp(remainingTime.Value - Time.deltaTime, 0, seconds));
 
-                if (remainingTime.value == 0)
+                if (remainingTime.Value == 0)
                 {
                     OnTimeOut?.Invoke();
                 }

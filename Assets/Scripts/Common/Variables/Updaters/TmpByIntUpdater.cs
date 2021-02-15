@@ -30,10 +30,10 @@ namespace AZhelnov.Variables
 
         private void UpdateText()
         {
-            if (variable.value != previousValue)
+            if (variable.Value != previousValue)
             {
-                textMeshPro.SetText(format, variable.value);
-                previousValue = variable.value;
+                textMeshPro.SetText(format, variable.Value);
+                previousValue = variable.Value;
             }
         }
     }
