@@ -7,8 +7,7 @@ namespace AZhelnov.Variables
     {
         [SerializeField] private float value;
 #if UNITY_EDITOR
-        [Multiline]
-        public string description;
+        [TextArea] [SerializeField] protected string description;
 #endif
         public float Value { get { return value; } }
 
