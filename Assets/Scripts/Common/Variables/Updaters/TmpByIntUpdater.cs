@@ -22,7 +22,7 @@ namespace AZhelnov.Variables
 
         private void Update()
         {
-            if (update)
+            if (update && variable.Value != previousValue)
             {
                 UpdateText();
             }
@@ -30,11 +30,8 @@ namespace AZhelnov.Variables
 
         private void UpdateText()
         {
-            if (variable.Value != previousValue)
-            {
-                textMeshPro.SetText(format, variable.Value);
-                previousValue = variable.Value;
-            }
+            textMeshPro.SetText(format, variable.Value);
+            previousValue = variable.Value;
         }
     }
 }
